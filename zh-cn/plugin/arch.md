@@ -26,7 +26,7 @@ Manifest文件是整个插件组织逻辑的核心，如果你有Chrome/VSCode�
 Manifest记录了插件名、作者、版本信息、入口文件、视图声明、插件指令头、插件响应函数名等多种信息，具体的写法详见[Manifest声明](zh-cn/plugin/manifest.md)
 
 ### 主入口文件
-主入口文件暴露了两个方法：activate和deactivate。其中，activate方法会在SaltDog插件被激活时（目前是开启程序默认激活所有插件）调用，deactivate会在插件被销毁（用户手动销毁或程序关闭）时调用。函数默认携带的参数是SaltDog API对象，以供插件进行调用。综上，您的主入口函数基本框架应该类似于以下：
+主入口文件暴露了两个方法：`activate`和`deactivate`。其中，`activate`方法会在SaltDog插件被激活时（目前是开启程序默认激活所有插件）调用，`deactivate`会在插件被销毁（用户手动销毁或程序关闭）时调用。函数默认携带的参数是SaltDog API对象，以供插件进行调用。综上，您的主入口函数基本框架应该类似于以下：
 
 ```javascript
 function activate(saltdog){
