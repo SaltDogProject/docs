@@ -5,10 +5,11 @@ SaltDog提供了一些和文献管理相关的API，以方便插件扩展文献�
 ### saltdog.library.listDir(dirID)
 查询某文件夹下的条目和子文件夹信息
 #### 参数说明
-- dirID - 待查的文件夹ID
-#### 返回值
-- Promise\<IDirList\>  详见: [IDirList](zh-cn/api/types.md#IDirList)
+- `dirID` - 待查的文件夹ID
 
+#### 返回值
+- `Promise<IDirList>`  详见: [IDirList](zh-cn/api/types.md#IDirList)
+?> 更多参考 [SaltDog Types](zh-cn/api/types.md)。
 ## 列表展示
 ### saltdog.library.registerDisplayProvider((listData)=>listData)
 增加文献列表中要展示的字段
@@ -89,8 +90,10 @@ saltdog.library.registerDisplayProvider((data) => {
 }
 ```
 ### 注意与提示
-- `DisplayProvider`的回调函数一定要将`listData`返回，否则会造成列表展示为空。
-- 在修改column和row内容时，请优先使用push等方法进行非覆盖修改。若有多个插件注册DisplayProvider，SaltDog会将其串行调用。也就是说，某插件可能被传递的`listData`是上一个插件修改过后的结果。因此覆盖赋值会导致之前插件的更改消失。
-- 若需要某条目的具体信息，可以通过调用`saltdog.library.getItemInfo(itemID)`方法或直接查询SaltDog数据库。
+!> `DisplayProvider`的回调函数一定要将`listData`返回，否则会造成列表展示为空。
+
+!> 在修改column和row内容时，请优先使用push等方法进行非覆盖修改。若有多个插件注册DisplayProvider，SaltDog会将其串行调用。也就是说，某插件可能被传递的`listData`是上一个插件修改过后的结果。因此覆盖赋值会导致之前插件的更改消失。
+
+?> 若需要某条目的具体信息，可以通过调用`saltdog.library.getItemInfo(itemID)`方法或直接查询SaltDog数据库。
 
 
