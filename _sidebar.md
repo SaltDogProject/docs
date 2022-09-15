@@ -6,4 +6,6 @@
 -   [API参考](zh-cn/api/)
     -   [PDFView](zh-cn/api/pdfview)
     -   [WebView](zh-cn/api/webview)
+    -   [文献管理](zh-cn/api/library.md)
+    -   [所有类型](zh-cn/api/types.md)
 -   [服务接口](zh-cn/server/)
